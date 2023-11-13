@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+  <definition name="stdParent" template="/WEB-INF/views/stdTemplate.jsp">
+    <put-attribute name="title" value="CampusLife" />
+    <put-attribute name="preScript" value="/student/preScript.jsp" />
+    <put-attribute name="sidebar" value="/student/sidebar.jsp" />
+    <put-attribute name="headerMenu" value="/student/headerMenu.jsp" />
+    <put-attribute name="footer" value="/student/footer.jsp" />
+    <put-attribute name="postScript" value="/student/postScript.jsp" />
+  </definition>
+  
+  <definition name="profParent" template="/WEB-INF/views/profTemplate.jsp">
+    <put-attribute name="title" value="CampusLife" />
+    <put-attribute name="preScript" value="/professor/preScript.jsp" />
+    <put-attribute name="sidebar" value="/professor/sidebar.jsp" />
+    <put-attribute name="headerMenu" value="/professor/headerMenu.jsp" />
+    <put-attribute name="footer" value="/professor/footer.jsp" />
+    <put-attribute name="postScript" value="/professor/postScript.jsp" />
+  </definition>
+  
+  <definition name="stfParent" template="/WEB-INF/views/stfTemplate.jsp">
+    <put-attribute name="title" value="CampusLife" />
+    <put-attribute name="preScript" value="/staff/preScript.jsp" />
+    <put-attribute name="sidebar" value="/staff/sidebar.jsp" />
+    <put-attribute name="headerMenu" value="/staff/headerMenu.jsp" />
+    <put-attribute name="footer" value="/staff/footer.jsp" />
+    <put-attribute name="postScript" value="/staff/postScript.jsp" />
+  </definition>
+  
+  <definition name="stdIndex" extends="stdParent">
+    <put-attribute name="contentPage" value="/WEB-INF/views/stdIndex.jsp" />
+  </definition>
+  
+  <definition name="profIndex" extends="profParent">
+    <put-attribute name="contentPage" value="/WEB-INF/views/profIndex.jsp" />
+  </definition>
+  
+  <definition name="stfIndex" extends="stfParent">
+    <put-attribute name="contentPage" value="/WEB-INF/views/stfIndex.jsp" />
+  </definition>
+
+  <definition name="student/*/*" extends="stdParent">
+    <put-attribute name="contentPage" value="/WEB-INF/views/student/{1}/{2}.jsp" />
+  </definition>
+  
+  <definition name="professor/*/*" extends="profParent">
+    <put-attribute name="contentPage" value="/WEB-INF/views/professor/{1}/{2}.jsp" />
+  </definition>
+  
+  <definition name="staff/*/*" extends="stfParent">
+    <put-attribute name="contentPage" value="/WEB-INF/views/staff/{1}/{2}.jsp" />
+  </definition>
+  
+</tiles-definitions>

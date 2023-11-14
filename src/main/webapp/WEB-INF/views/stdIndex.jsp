@@ -320,7 +320,7 @@
                                         CSS bloat and poor page performance. Custom CSS classes are used to create
                                         custom components and custom utility classes.</p>
                                     <p class="mb-0">Before working with this theme, you should become familiar with the
-                                        Bootstrap framework, especially the utility classes.</p>
+                                        Bootstrap framework, especially the utility classesungmin.</p>
                                 </div>
                             </div>
 

@@ -10,6 +10,10 @@
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+<<<<<<< HEAD
+=======
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-test-sources/test-annotations"/>
+>>>>>>> b285286b2c768db648b3e512cfd08d652440ef3b
                 
         <property name="context-root" value="CampusLife"/>
                 

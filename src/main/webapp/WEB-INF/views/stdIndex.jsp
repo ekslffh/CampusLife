@@ -327,5 +327,4 @@
                         </div>
                     </div>
 
->>>>>>> branch 'main' of https://github.com/ekslffh/CampusLife.git
                 </div>

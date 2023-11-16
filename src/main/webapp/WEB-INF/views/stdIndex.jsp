@@ -4,7 +4,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">성윦ㅎㅇㅎㅇ</h1>
+                        <h1 class="h3 mb-0 text-gray-800">학생 메인페이지</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
@@ -319,7 +319,7 @@
                                     <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
                                         CSS bloat and poor page performance. Custom CSS classes are used to create
                                         custom components and custom utility classes.</p>
-                                    <p class="mb-0">Before working with this theme, you should become familiar with the
+                                    <p class="mb-0">ㄹBefore working with this theme, you should become familiar with the
                                         Bootstrap framework, especially the utility classesungmin.</p>
                                 </div>
                             </div>

@@ -17,7 +17,7 @@
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" 
 		c:sqlSessionFactory-ref="sqlSessionFactory"
 	/>
-<!-- 	ant path matching wild card : ** -->
+	<!-- 	ant path matching wild card : ** -->
 	<mybatis-spring:scan base-package="kr.or.ddit.**.dao"
 		annotation="org.apache.ibatis.annotations.Mapper"
 		factory-ref="sqlSessionFactory"

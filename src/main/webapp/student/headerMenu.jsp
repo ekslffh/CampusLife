@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
+
+
+<security:authentication property="principal.realUser" var="authMember" />
+
 <nav
 	class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -166,10 +171,13 @@
 		<li class="nav-item dropdown no-arrow"><a
 			class="nav-link dropdown-toggle" href="#" id="userDropdown"
 			role="button" data-toggle="dropdown" aria-haspopup="true"
-			aria-expanded="false"> <span
-				class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas
-					McGee</span> <img class="img-profile rounded-circle"
-				src="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/img/undraw_profile.svg">
+			aria-expanded="false"> 
+			<span
+				class="mr-2 d-none d-lg-inline text-gray-600 small">
+				${authMember.stdNm }
+			</span> 
+				<img class="img-profile rounded-circle"
+					src="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/img/undraw_profile.svg">
 		</a> <!-- Dropdown - User Information -->
 			<div
 				class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

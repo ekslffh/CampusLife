@@ -16,6 +16,6 @@ public class SubjectVO {
 	private String subStatus;
 	@NotBlank
 	private String subType;
-	@NotBlank
+	
 	private String subMajCd;
 }

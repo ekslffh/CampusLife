@@ -1,5 +1,8 @@
 package kr.or.ddit.staff.account.dao;
 
-public class AccountDAO {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface AccountDAO {
 
 }

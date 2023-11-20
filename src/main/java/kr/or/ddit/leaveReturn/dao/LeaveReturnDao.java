@@ -1,5 +1,8 @@
 package kr.or.ddit.leaveReturn.dao;
 
-public class LeaveReturnDao {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface LeaveReturnDao {
 
 }

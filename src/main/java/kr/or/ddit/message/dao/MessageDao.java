@@ -1,5 +1,8 @@
 package kr.or.ddit.message.dao;
 
-public class MessageDao {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface MessageDao {
 
 }

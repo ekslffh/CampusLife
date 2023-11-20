@@ -1,5 +1,8 @@
 package kr.or.ddit.lecture.exam.dao;
 
-public class ExamDao {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface ExamDao {
 
 }

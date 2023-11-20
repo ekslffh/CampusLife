@@ -1,5 +1,8 @@
 package kr.or.ddit.officialAbsence.dao;
 
-public class OfficialAbsenceDao {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface OfficialAbsenceDao {
 
 }

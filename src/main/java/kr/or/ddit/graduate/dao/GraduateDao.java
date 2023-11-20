@@ -1,5 +1,8 @@
 package kr.or.ddit.graduate.dao;
 
-public class GraduateDao {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface GraduateDao {
 
 }

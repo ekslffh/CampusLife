@@ -1,5 +1,8 @@
 package kr.or.ddit.volunteer.dao;
 
-public class VolunteerDao {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface VolunteerDao {
 
 }

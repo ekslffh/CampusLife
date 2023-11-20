@@ -1,5 +1,8 @@
 package kr.or.ddit.consulting.dao;
 
-public class ConsultingDao {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface ConsultingDao {
 
 }

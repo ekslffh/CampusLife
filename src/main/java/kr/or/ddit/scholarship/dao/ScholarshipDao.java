@@ -1,5 +1,8 @@
 package kr.or.ddit.scholarship.dao;
 
-public class ScholarshipDao {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface ScholarshipDao {
 
 }

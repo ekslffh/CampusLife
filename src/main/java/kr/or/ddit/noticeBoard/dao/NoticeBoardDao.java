@@ -1,5 +1,8 @@
 package kr.or.ddit.noticeBoard.dao;
 
-public class NoticeBoardDao {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface NoticeBoardDao {
 
 }

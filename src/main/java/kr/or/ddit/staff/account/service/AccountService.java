@@ -7,7 +7,7 @@ import kr.or.ddit.professor.vo.ProfessorVO;
 
 public interface AccountService {
 
-//	public boolean createStfAccount(StaffVO stf);
-//	public boolean createStdAcc(StudentVO std);
-//	public boolean createProAcc(ProfessorVO pro);
+	public boolean createStfAccount(StaffVO stf);
+	public boolean createStdAcc(StudentVO std);
+	public boolean createProAcc(ProfessorVO pro);
 }

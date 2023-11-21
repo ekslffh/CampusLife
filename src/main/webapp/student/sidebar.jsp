@@ -3,7 +3,7 @@
  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
      <!-- Sidebar - Brand -->
-     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="${pageContext.request.contextPath }/student">
          <div class="sidebar-brand-icon rotate-n-15">
              <i class="fas fa-laugh-wink"></i>
          </div>
@@ -51,8 +51,8 @@
          </a>
          <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="buttons.html">공결신청</a>
-                 <a class="collapse-item" href="buttons.html">공결내역</a>
+                 <a class="collapse-item" href="${pageContext.request.contextPath }/student/official-absence/insert.do">공결신청</a>
+                 <a class="collapse-item" href="${pageContext.request.contextPath }/student/official-absence/list.do">공결내역</a>
              </div>
          </div>
      </li>

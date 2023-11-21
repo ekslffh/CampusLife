@@ -2,18 +2,19 @@ package kr.or.ddit.lecture.subject.service;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Service;
 
 import kr.or.ddit.exception.PKNotFoundException;
 import kr.or.ddit.lecture.subject.dao.SubjectDao;
 import kr.or.ddit.lecture.subject.vo.SubjectVO;
-import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
 public class SubjectServiceImpl implements SubjectService {
 
-	private final SubjectDao subDao;
+	@Inject
+	private SubjectDao subDao;
 	
 	@Override
 	public List<SubjectVO> findAll() {

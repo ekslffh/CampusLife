@@ -40,8 +40,8 @@
 				<div class="collapse" id="collapseLayouts2"
 					aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 					<nav class="sb-sidenav-menu-nested nav">
-<%-- 						<a class="nav-link" href="${pageContext.request.contextPath}/staff/account/Insert.do">계정생성</a> --%>
-						<a class="nav-link" href="">계정생성</a>
+						<a class="nav-link"
+							href="${pageContext.request.contextPath}/staff/account/accInsert.do">계정생성</a>
 						<a class="nav-link" href="layout-sidenav-light.html">계정관리</a>
 					</nav>
 				</div>

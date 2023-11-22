@@ -37,4 +37,8 @@ public class ProfessorVO implements Serializable {
 	@NotBlank
 	@JsonIgnore
 	private String profPw;
+	@NotBlank 
+	private String profDetailAddr;
+	@NotBlank 
+	private String profPostNo;
 }

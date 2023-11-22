@@ -43,4 +43,8 @@ public class StudentVO implements Serializable {
 	@NotBlank
 	@JsonIgnore // 보안을 위해 Json 변환시(직렬화과정)에 포함되지 않도록 설정
 	private String stdPw;
+	@NotBlank 
+	private String stdDetailAddr;
+	@NotBlank 
+	private String stdPostNo;
 }

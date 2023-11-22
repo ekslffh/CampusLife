@@ -37,4 +37,9 @@ public class StaffVO implements Serializable {
 	@NotBlank
 	@JsonIgnore
 	private String stfPw;
+	@NotBlank 
+	private String stfDetailAddr;
+	@NotBlank 
+	private String stfPostNo;
+	
 }

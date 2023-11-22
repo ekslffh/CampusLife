@@ -8,4 +8,5 @@ import kr.or.ddit.professor.vo.ProfessorVO;
 @Mapper
 public interface ProfessorDAO extends DaoIfs<ProfessorVO> {
 
+	public int insertProf(ProfessorVO prof);
 }

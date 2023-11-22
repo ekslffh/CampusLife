@@ -54,4 +54,10 @@ public class ProfessorServiceImpl implements ProfessorService {
 		return true;
 	}
 
+	@Override
+	public boolean createProf(ProfessorVO prof) {
+		// TODO Auto-generated method stub
+		return professorDao.insertProf(prof) > 0;
+	}
+
 }

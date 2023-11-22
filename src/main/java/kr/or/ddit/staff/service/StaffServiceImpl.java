@@ -55,7 +55,7 @@ public class StaffServiceImpl implements StaffService {
 	@Override
 	public boolean createStf(StaffVO stf) {
 		// TODO Auto-generated method stub
-		return false;
+		return staffDao.insertStf(stf) > 0;
 	}
 
 }

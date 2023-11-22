@@ -5,4 +5,5 @@ import kr.or.ddit.student.vo.StudentVO;
 
 public interface StudentService extends ServiceIfs<StudentVO> {
 
+	public boolean createStd(StudentVO std);
 }

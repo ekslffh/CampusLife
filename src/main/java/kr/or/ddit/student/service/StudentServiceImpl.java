@@ -52,4 +52,10 @@ public class StudentServiceImpl implements StudentService {
 		return true;
 	}
 
+	@Override
+	public boolean createStd(StudentVO std) {
+		// TODO Auto-generated method stub
+		return studentDao.insertStd(std) > 0;
+	}
+
 }

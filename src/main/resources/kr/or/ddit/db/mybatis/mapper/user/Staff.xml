@@ -21,4 +21,24 @@
 		WHERE STF_NO = #{stfNo}
 	</select>
 	
+	<insert id="insertStf" parameterType="kr.or.ddit.staff.vo.StaffVO">
+		INSERT INTO staff (
+		    stf_no, stf_nm, stf_gender, stf_profile,
+		    stf_country, stf_addr, stf_tel, stf_email,
+		    stf_join_dt, stf_status, stf_dept_no, stf_pw
+		) VALUES (
+		    #{stfNo,jdbcType=VARCHAR}
+			, #{stfNm,jdbcType=VARCHAR}
+			, #{stfGender,jdbcType=CHAR}
+			, #{stfProfile,jdbcType=VARCHAR}
+			, #{stfCountry,jdbcType=VARCHAR}
+			, #{stfAddr,jdbcType=VARCHAR}
+			, #{stfTel,jdbcType=VARCHAR}
+			, #{stfEmail,jdbcType=VARCHAR}
+			, #{stfJoinDt,jdbcType=DATE}
+			, #{stfStatus,jdbcType=CHAR}
+			, #{stfDeptNo,jdbcType=VARCHAR}
+			, #{stfPw,jdbcType=VARCHAR}
+		);
+	</insert>
 </mapper>

@@ -35,21 +35,27 @@ public class StaffServiceImpl implements StaffService {
 	}
 
 	@Override
-	public int create(StaffVO obj) {
+	public boolean create(StaffVO obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return true;
 	}
 
 	@Override
-	public int modify(StaffVO obj) {
+	public boolean modify(StaffVO obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return true;
 	}
 
 	@Override
-	public int removeById(String id) {
+	public boolean removeById(String id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return true;
+	}
+
+	@Override
+	public boolean createStf(StaffVO stf) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

@@ -10,12 +10,14 @@ import kr.or.ddit.exception.PKNotFoundException;
 import kr.or.ddit.lecture.subject.dao.SubjectDao;
 import kr.or.ddit.lecture.subject.vo.SubjectVO;
 
+
+
 @Service
 public class SubjectServiceImpl implements SubjectService {
 
 	@Inject
 	private SubjectDao subDao;
-	
+
 	@Override
 	public List<SubjectVO> findAll() {
 		return subDao.selectAll();
@@ -34,21 +36,26 @@ public class SubjectServiceImpl implements SubjectService {
 	}
 
 	@Override
-	public int create(SubjectVO obj) {
-		// TODO Auto-generated method stub
-		return 0;
+	public boolean create(SubjectVO obj) {
+		int cnt = subDao.insert(obj);
+		
+		return cnt > 0;
 	}
 
 	@Override
-	public int modify(SubjectVO obj) {
+	public boolean modify(SubjectVO obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return false;
 	}
 
 	@Override
-	public int removeById(String id) {
+	public boolean removeById(String id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return false;
 	}
+	
+	
+
+
 
 }

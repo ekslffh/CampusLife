@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.or.ddit.exception.PKNotFoundException;
@@ -38,21 +37,21 @@ public class ProfessorServiceImpl implements ProfessorService {
 	
 
 	@Override
-	public int create(ProfessorVO obj) {
+	public boolean create(ProfessorVO obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return true;
 	}
 
 	@Override
-	public int modify(ProfessorVO obj) {
+	public boolean modify(ProfessorVO obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return true;
 	}
 
 	@Override
-	public int removeById(String id) {
+	public boolean removeById(String id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return true;
 	}
 
 }

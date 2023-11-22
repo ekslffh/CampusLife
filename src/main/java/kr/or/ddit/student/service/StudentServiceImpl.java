@@ -35,21 +35,21 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public int create(StudentVO obj) {
+	public boolean create(StudentVO obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return true;
 	}
 
 	@Override
-	public int modify(StudentVO obj) {
+	public boolean modify(StudentVO obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return true;
 	}
 
 	@Override
-	public int removeById(String id) {
+	public boolean removeById(String id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return true;
 	}
 
 }

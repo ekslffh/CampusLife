@@ -50,12 +50,15 @@ public class StaffServiceImpl implements StaffService {
 	public boolean removeById(String id) {
 		// TODO Auto-generated method stub
 		return true;
+<<<<<<< HEAD
 	}
 
 	@Override
 	public boolean createStf(StaffVO stf) {
 		// TODO Auto-generated method stub
 		return false;
+=======
+>>>>>>> refs/remotes/origin/main
 	}
 
 }

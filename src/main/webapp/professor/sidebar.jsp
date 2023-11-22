@@ -24,7 +24,7 @@
 					<nav class="sb-sidenav-menu-nested nav">
   						<a class="nav-link" href="layout-static.html">강의</a>
 						<a class="nav-link" href="layout-sidenav-light.html">공결</a>
-						<a class="nav-link" href="layout-sidenav-light.html">과목개설</a>
+						<a class="nav-link" href="${pageContext.request.contextPath }/professor/subject/subjectList.do">과목개설</a>
 						<a class="nav-link" href="layout-sidenav-light.html">강의개설</a>
 					</nav>
 				</div>

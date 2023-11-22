@@ -24,6 +24,9 @@
     <!-- Custom styles for this template-->
     <link href="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
     
+     <!-- Custom styles for this page (데이터테이블 스타일) -->
+    <link href="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    
 </head>
 
 <body id="page-top">

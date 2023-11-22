@@ -16,7 +16,7 @@
 		FROM OFFICIAL_ABSENCE_CATEGORY
 	</select>
 	
-	<insert id="insert">
+	<insert id="insert" parameterType="kr.or.ddit.officialAbsence.vo.OfficialAbsHisVO">
 		INSERT INTO official_absence_history (
 		    oah_id
 		    , oah_file
@@ -24,11 +24,11 @@
 		    , oah_ls_no
 		    , oah_oac_id
 		) VALUES (
-		    #{oahId}
-		    , #{oahFile}
-		    , #{oahStdNo}
-		    , #{oahLsNo}
-		    , #{oahOacId}
+		    #{oahId, jdbcType=VARCHAR}
+		    , #{oahFile, jdbcType=VARCHAR}
+		    , #{oahStdNo, jdbcType=VARCHAR}
+		    , #{oahLsNo, jdbcType=VARCHAR}
+		    , #{oahOacId, jdbcType=VARCHAR}
 		)
 	</insert>
 

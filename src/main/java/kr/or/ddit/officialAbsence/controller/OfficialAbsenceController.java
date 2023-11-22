@@ -47,7 +47,7 @@ public class OfficialAbsenceController {
 			, Errors errors
 			, RedirectAttributes redirectAttributes
 	) {
-		String viewName = "student/officialAbsence/officialAbsenceList";
+		String viewName = "redirect:/student/official-absence/list.do";
 		
 		// 에러가 없는 경우
 		if (!errors.hasErrors()) {
@@ -57,7 +57,7 @@ public class OfficialAbsenceController {
 				if (success) {
 					redirectAttributes.addFlashAttribute("sucMsg", "공결신청에 성공하였습니다.");
 				} else {
-					redirectAttributes.addFlashAttribute("errMsg", "공결신청에 성공하였습니다.");
+					redirectAttributes.addFlashAttribute("errMsg", "공결신청에 실패하였습니다.");
 				}
 			} catch(Exception e) {
 				redirectAttributes.addFlashAttribute("errMsg", e.getMessage());

@@ -42,6 +42,10 @@ public class OfficialAbsenceServiceImpl implements OfficialAbsenceService {
 		// lecNo를 강의일정속성에 임시저장해뒀다.
 		String lecNo = obj.getOahLsNo();
 		
+		if (obj.getOahOacId().equals("CC")) {
+			return false;
+		}
+		
 		// 해당 강의가 오늘 수업이 있는지 확인하고 없으면 RuntimeException 던지기
 //		 throw new RuntimeException("선택하신 강의는 금일에 수업이 존재하지 않습니다.");
 		

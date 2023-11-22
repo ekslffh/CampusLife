@@ -37,14 +37,9 @@ public class SubjectServiceImpl implements SubjectService {
 
 	@Override
 	public boolean create(SubjectVO obj) {
-<<<<<<< HEAD
 		int cnt = subDao.insert(obj);
 		
 		return cnt > 0;
-=======
-		// TODO Auto-generated method stub
-		return false;
->>>>>>> branch 'main' of https://github.com/ekslffh/CampusLife.git
 	}
 
 	@Override

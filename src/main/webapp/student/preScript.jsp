@@ -14,14 +14,14 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 	<c:if test="${not empty errMsg}">
     	swal.fire({
-            icon: 'warning',
+            icon: 'error',
             title: '알림',
             text: "${errMsg}"
         });
 	</c:if>
 	<c:if test="${not empty sucMsg}">
     	swal.fire({
-            icon: 'warning',
+            icon: 'success',
             title: '알림',
             text: "${sucMsg}"
         });

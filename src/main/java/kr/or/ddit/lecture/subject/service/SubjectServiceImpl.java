@@ -34,21 +34,21 @@ public class SubjectServiceImpl implements SubjectService {
 	}
 
 	@Override
-	public int create(SubjectVO obj) {
+	public boolean create(SubjectVO obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return false;
 	}
 
 	@Override
-	public int modify(SubjectVO obj) {
+	public boolean modify(SubjectVO obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return false;
 	}
 
 	@Override
-	public int removeById(String id) {
+	public boolean removeById(String id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return false;
 	}
 
 }

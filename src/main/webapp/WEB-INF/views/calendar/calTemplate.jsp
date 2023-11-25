@@ -111,7 +111,6 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"
                         id="sprintSettingModalClose">취소</button>
                 </div>
-    <style></style>
             </div>
         </div>
     </div>

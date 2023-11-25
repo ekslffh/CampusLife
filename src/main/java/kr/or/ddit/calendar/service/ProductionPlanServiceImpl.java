@@ -1,18 +1,23 @@
 package kr.or.ddit.calendar.service;
 
 import java.util.List;
-import java.util.Map;
+
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import kr.or.ddit.calendar.dao.CalendarDao;
+import kr.or.ddit.calendar.vo.CalendarVO;
+
 @Service
 public class ProductionPlanServiceImpl implements ProductionPlanService{
+	@Inject
+	private CalendarDao calDAO;
 	
-
 	@Override
-	public List<Map<String, Object>> getProductionAllPlanList() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CalendarVO> getProductionAllPlanList() {
+		
+		return calDAO.selectAll();
 	}
 
 }

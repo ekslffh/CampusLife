@@ -31,7 +31,7 @@
 		    prof_no,
 		    prof_nm,
 		    prof_gender,
-		    prof_profile,
+		    prof_profile, 
 		    prof_country,
 		    prof_addr,
 		    prof_tel,

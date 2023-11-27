@@ -21,4 +21,41 @@
 		WHERE PROF_NO = #{profNo}
 	</select>
 	
+	<insert id="insertProf" parameterType="kr.or.ddit.professor.vo.ProfessorVO">
+	<selectKey keyProperty="profNo" order="BEFORE" resultType="String">
+        SELECT SUBSTR(maj_tel, -4) || LPAD(PROF_NO_SEQ.NEXTVAL, 4, '0') AS profNo
+        FROM major
+        WHERE maj_cd = #{profMajCd, jdbcType=VARCHAR}
+    </selectKey>	
+		INSERT INTO professor (
+		    prof_no,
+		    prof_nm,
+		    prof_gender,
+		    prof_profile,
+		    prof_country,
+		    prof_addr,
+		    prof_tel,
+		    prof_email,
+		    prof_join_dt,
+		    prof_status,
+		    prof_maj_cd,
+		    prof_pw,
+		    prof_detail_addr
+		) VALUES (
+		    #{profNo,jdbcType=VARCHAR}
+			, #{profNm,jdbcType=VARCHAR}
+			, #{profGender,jdbcType=CHAR}
+			, #{profProfile,jdbcType=VARCHAR}
+			, #{profCountry,jdbcType=VARCHAR}
+			, #{profAddr,jdbcType=VARCHAR}
+			, #{profTel,jdbcType=VARCHAR}
+			, #{profEmail,jdbcType=VARCHAR}
+			, #{profJoinDt,jdbcType=DATE}
+			, 'P1'
+			, #{profMajCd,jdbcType=VARCHAR}
+			, 'java'
+			, #{profDetailAddr,jdbcType=VARCHAR}
+		)
+	</insert>
+	
 </mapper>

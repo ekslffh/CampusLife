@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -13,7 +17,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(of = "stdNo")
 public class StudentVO implements Serializable {
-	@NotBlank
+	
 	private String stdNo;
 	@NotBlank
 	private String stdNm;
@@ -23,24 +27,19 @@ public class StudentVO implements Serializable {
 	private String stdAddr;
 	@NotBlank
 	private String stdGender;
-	@NotBlank
+	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate stdBir;
 	@NotBlank
 	private String stdEmail;
 	@NotBlank
 	private String stdCountry;
-	@NotBlank
 	private String stdStatus;
 	private String stdProfile;
-	@NotBlank
 	private Integer stdFinCredit;
 	@NotBlank
-	private Integer stdFinSem;
-	@NotBlank
 	private String stdMajCd;
-	@NotBlank
 	private String stdProfNo;
-	@NotBlank
+//	@NotBlank
 	@JsonIgnore // 보안을 위해 Json 변환시(직렬화과정)에 포함되지 않도록 설정
 	private String stdPw;
 	@NotBlank 

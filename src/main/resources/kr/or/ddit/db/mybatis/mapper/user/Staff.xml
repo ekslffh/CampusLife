@@ -22,10 +22,27 @@
 	</select>
 	
 	<insert id="insertStf" parameterType="kr.or.ddit.staff.vo.StaffVO">
+	<selectKey order="BEFORE" keyProperty="stfNo" resultType="string">
+<!-- 	  SELECT CONCAT(#{stfDeptNo, jdbcType=VARCHAR} || LPAD(STF_NO_SEQ.NEXTVAL, 4, '0'))  -->
+<!-- 	  FROM DUAL -->
+	  SELECT #{stfDeptNo, jdbcType=VARCHAR} || LPAD(STF_NO_SEQ.NEXTVAL, 4, '0') 
+	  FROM DUAL
+	</selectKey>
 		INSERT INTO staff (
-		    stf_no, stf_nm, stf_gender, stf_profile,
-		    stf_country, stf_addr, stf_tel, stf_email,
-		    stf_join_dt, stf_status, stf_dept_no, stf_pw
+		    stf_no,
+		    stf_nm,
+		    stf_gender,
+		    stf_profile,
+		    stf_country,
+		    stf_addr,
+		    stf_tel,
+		    stf_email,
+		    stf_join_dt,
+		    stf_status,
+		    stf_dept_no,
+		    stf_pw,
+		    stf_detail_addr,
+		    stf_post_no
 		) VALUES (
 		    #{stfNo,jdbcType=VARCHAR}
 			, #{stfNm,jdbcType=VARCHAR}
@@ -36,9 +53,11 @@
 			, #{stfTel,jdbcType=VARCHAR}
 			, #{stfEmail,jdbcType=VARCHAR}
 			, #{stfJoinDt,jdbcType=DATE}
-			, #{stfStatus,jdbcType=CHAR}
+			, 'P1'
 			, #{stfDeptNo,jdbcType=VARCHAR}
-			, #{stfPw,jdbcType=VARCHAR}
-		);
+			, 'java'
+			, #{stfDetailAddr,jdbcType=VARCHAR}
+			, #{stfPostNo,jdbcType=VARCHAR}
+		)
 	</insert>
 </mapper>

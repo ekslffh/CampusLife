@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping
+@RequestMapping("/staff/account/profAccInsert.do")
 public class ProfInsertController {
 
 	private final ProfessorService service;
@@ -28,7 +28,7 @@ public class ProfInsertController {
 	@GetMapping
 	public String profForm(@ModelAttribute("prof") ProfessorVO prof, Model model) {
 		model.addAttribute("prof", prof);
-		return "professor/account/accForm";
+		return "staff/account/profAccForm";
 	}
 	
 	@PostMapping
@@ -42,13 +42,13 @@ public class ProfInsertController {
 		if (!errors.hasErrors()) {
 			boolean success = service.createProf(prof);
 			if (success) {
-				viewName = "redirect:/professor/account/accList.do";
+				viewName = "redirect:/staff/account/accList.do";
 			} else {
 				model.addAttribute("message", "계정 생성 중 문제 발생");
-				viewName = "professor/account/accForm";
+				viewName = "staff/account/profAccForm";
 			}
 		} else {
-			viewName = "professor/account.accForr";
+			viewName = "staff/account/profAccForm";
 			System.out.println(errors.getAllErrors());
 		}
 		

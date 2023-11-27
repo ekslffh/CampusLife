@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("/student/account/accInsert.do")
+@RequestMapping("/staff/account/stdAccInsert.do")
 public class StdInsertController {
 
 	private final StudentService service;
@@ -28,7 +28,7 @@ public class StdInsertController {
 	@GetMapping
 	public String stdForm(@ModelAttribute("std") StudentVO std, Model model) {
 		model.addAttribute("std", std);
-		return "student/account/accForm";
+		return "staff/account/stdAccForm";
 	}
 	
 	@PostMapping
@@ -43,10 +43,10 @@ public class StdInsertController {
 		if (!errors.hasErrors()) {
 			boolean success = service.createStd(std);
 			if (success) {
-				viewName = "redirect:/student/account/accList.do";
+				viewName = "redirect:/staff/account/accList.do";
 			} else {
 				model.addAttribute("message", "계정 생성 중 문제 발생");
-				viewName = "student/account/accForm";
+				viewName = "staff/account/stdAccForm";
 			}
 		} else {
 			viewName = "";

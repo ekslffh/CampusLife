@@ -22,5 +22,49 @@
 		FROM STUDENT 
 		WHERE STD_NO = #{stdNo}	
 	</select>
+	
+	<insert id="insertStd" parameterType="kr.or.ddit.student.vo.StudentVO">
+<!-- 	<selectKey order="BEFORE" keyProperty="empNo" resultType="string"> -->
+<!--           SELECT CONCAT(#{empDeptNo, jdbcType=CHAR}, LPAD(EMP_SEQ.NEXTVAL, 4, '0'))  -->
+<!--           FROM DUAL -->
+<!--     </selectKey> -->
+		INSERT INTO student (
+		    std_no,
+		    std_nm,
+		    std_tel,
+		    std_addr,
+		    std_gender,
+		    std_bir,
+		    std_email,
+		    std_country,
+		    std_status,
+		    std_profile,
+		    std_fin_credit,
+		    std_fin_sem,
+		    std_maj_cd,
+		    std_prof_no,
+		    std_pw,
+		    std_detail_addr,
+		    std_post_no
+		) VALUES (
+		    TO_CHAR(SYSDATE, 'YYYY') || LPAD(STD_NO_SEQ.NEXTVAL, 4, '0')
+			, #{stdNm,jdbcType=VARCHAR}
+			, #{stdTel,jdbcType=VARCHAR}
+			, #{stdAddr,jdbcType=VARCHAR}
+			, #{stdGender,jdbcType=CHAR}
+			, #{stdBir,jdbcType=DATE}
+			, #{stdEmail,jdbcType=VARCHAR}
+			, #{stdCountry,jdbcType=VARCHAR}
+			, 'S0'
+			, #{stdProfile,jdbcType=VARCHAR}
+			, '0'
+			, '0'
+			, #{stdMajCd,jdbcType=VARCHAR}
+			, ''
+			, 'java'
+			, #{stdDetailAddr,jdbcType=VARCHAR}
+			, #{stdPostNo,jdbcType=VARCHAR}
+		)
+	</insert>
 
 </mapper>

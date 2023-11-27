@@ -28,7 +28,7 @@ public class StaffInsertController {
 	@GetMapping
 	public String stfForm(@ModelAttribute("stf") StaffVO stf, Model model) {
 		model.addAttribute("stf", stf);
-		return "staff/account/accForm";
+		return "staff/account/stfAccForm";
 	}
 	
 	@PostMapping
@@ -46,10 +46,10 @@ public class StaffInsertController {
 				viewName = "redirect:/staff/account/accList.do";
 			} else {
 				model.addAttribute("message", "계정 생성 중 문제 발생");
-				viewName = "staff/account/accForm";
+				viewName = "staff/account/stfAccForm";
 			}
 		} else {
-			viewName = "staff/account/accForm";
+			viewName = "staff/account/stfAccForm";
 			System.out.println(errors.getAllErrors());
 		}
 		

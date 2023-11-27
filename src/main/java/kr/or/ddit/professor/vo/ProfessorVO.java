@@ -5,6 +5,9 @@ import java.time.LocalDate;
 
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
@@ -13,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(of = "profNo")
 public class ProfessorVO implements Serializable {
-	@NotBlank
+	
 	private String profNo;
 	@NotBlank
 	private String profNm;
@@ -28,13 +31,12 @@ public class ProfessorVO implements Serializable {
 	private String profTel;
 	@NotBlank
 	private String profEmail;
-	@NotBlank
+	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate profJoinDt;
-	@NotBlank
 	private String profStatus;
 	@NotBlank
 	private String profMajCd;
-	@NotBlank
+//	@NotBlank
 	@JsonIgnore
 	private String profPw;
 	@NotBlank 

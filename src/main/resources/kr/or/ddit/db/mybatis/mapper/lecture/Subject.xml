@@ -6,5 +6,27 @@
 		SELECT SUB_NO, SUB_NM, SUB_STATUS, SUB_TYPE, SUB_MAJ_CD
 		FROM SUBJECT
 	</select>
-	
+
+	<insert id="insert" parameterType="SubjectVO">
+		<selectKey order="BEFORE" keyProperty="subNo"
+			resultType="String">
+			SELECT 'SUB' || LPAD(SUBJECT_NO_SEQ.NEXTVAL,3,'0')
+			FROM DUAL
+		</selectKey>
+		INSERT INTO subject (
+		sub_no,
+		sub_nm,
+		sub_status,
+		sub_type,
+		sub_maj_cd
+		)
+		VALUES (
+		#{subNo,jdbcType=VARCHAR}
+		, #{subNm,jdbcType=VARCHAR}
+		, #{subStatus,jdbcType=VARCHAR}
+		,
+		#{subType,jdbcType=VARCHAR}
+		, #{subMajCd,jdbcType=VARCHAR}
+		)
+	</insert>
 </mapper>

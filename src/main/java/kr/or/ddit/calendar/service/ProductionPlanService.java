@@ -11,4 +11,5 @@ public interface ProductionPlanService {
 	 */
 	List<CalendarVO> getProductionAllPlanList();
 
+	public String insertCal(CalendarVO calInfo);
 }

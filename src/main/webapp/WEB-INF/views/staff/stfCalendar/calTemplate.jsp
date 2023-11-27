@@ -3,7 +3,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // 공통 FullCalendar 설정
+    // FullCalendar 설정
     var commonCalendarOptions = {
       initialView: 'dayGridMonth',
       headerToolbar: {
@@ -23,14 +23,13 @@
       displayEventTime: false
     };
 
-    // FullCalendar을 이용한 일정 표시
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, commonCalendarOptions);
     calendar.render();
 
-    // 서버에서 데이터 가져오기
+    // DB에서 저장된 일정 가져오기
     var request = $.ajax({
-      url: "/production/monthPlan",
+    	url: "${pageContext.request.contextPath}/cal/production/monthPlan",
       method: "GET",
       dataType: "json"
     });
@@ -38,12 +37,18 @@
     request.done(function(data) {
       console.log(data);
 
-      // 가져온 데이터로 캘린더 업데이트
-      var calendarWithData = new FullCalendar.Calendar(calendarEl, {
-        ...commonCalendarOptions,  // 공통 설정 재사용
-        events: data
-      });
-
+      // 가져온 일정으로 캘린더 업뎃
+     var events = data.map(function(item) {
+    	return {
+      		title: item.title,
+      		start: new Date(item.start[0], item.start[1] - 1, item.start[2]),
+      		end: new Date(item.end[0], item.end[1] - 1, item.end[2]+1),
+      		content: item.content
+    		};
+  		});
+		
+  // events에 저장된 캘린더의 정보로 다시 render
+     calendar.addEventSource(events);
       calendarWithData.render();
     });
 
@@ -52,22 +57,21 @@
     });
 
     $('#addCalendar').on("click", function() {
-      var newEvent = {
-        title: $("#calendar_title").val(),
-        content: $("#calendar_content").val(),
-        start: $("#calendar_start_date").val(),
-        end: $("#calendar_end_date").val(),
+      var calInfo = {
+        calTitle: $("#calTitle").val(),
+        calContent: $("#calContent").val(),
+        calStartDt: $("#calStartDt").val(),
+        calEndDt: $("#calEndDt").val(),
       };
 
-      // 이벤트를 events 배열에 추가
-      calendar.addEvent(newEvent);
+      calendar.addEvent(calInfo);
 
-      // 서버로 데이터 전송
+      // ProductionController로 데이터 전송
       $.ajax({
-        url: "/production/addEvent", // 서버에 데이터를 전송할 주소
-        method: "POST", // POST 방식으로 전송
+        url: "${pageContext.request.contextPath}/cal/production/addCal.do",
+        method: "POST",
         contentType: "application/json",
-        data: JSON.stringify(newEvent),
+        data: JSON.stringify(calInfo),
         success: function(response) {
           console.log("이벤트가 성공적으로 추가되었습니다:", response);
         },
@@ -76,7 +80,7 @@
         }
       });
 
-      // 모달을 닫기
+      // 모달 닫기
       $("#calendarModal").modal("hide");
     });
 
@@ -97,13 +101,13 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="taskId" class="col-form-label">제목</label>
-                        <input type="text" class="form-control" id="calendar_title" name="calendar_title">
-                        <label for="taskId" class="col-form-label">내용</label>
-                        <input type="text" class="form-control" id="calendar_content" name="calendar_content">
+                        <input type="text" class="form-control" id="calTitle" name="calTitle">
+                        <label for="calContent" class="col-form-label">내용</label>
+                        <textarea class="form-control" id="calContent" name="calContent"></textarea>
                         <label for="taskId" class="col-form-label">시작 일자</label>
-                        <input type="date" class="form-control" id="calendar_start_date" name="calendar_start_date">
+                        <input type="date" class="form-control" id="calStartDt" name="calStartDt">
                         <label for="taskId" class="col-form-label">종료 일자</label>
-                        <input type="date" class="form-control" id="calendar_end_date" name="calendar_end_date">
+                        <input type="date" class="form-control" id="calEndDt" name="calEndDt">
                     </div>
                 </div>
                 <div class="modal-footer">

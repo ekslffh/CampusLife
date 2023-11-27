@@ -20,4 +20,10 @@ public class ProductionPlanServiceImpl implements ProductionPlanService{
 		return calDAO.selectAll();
 	}
 
+	@Override
+	public String insertCal(CalendarVO calInfo) {
+		calDAO.insert(calInfo);
+		return null;
+	}
+
 }

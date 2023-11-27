@@ -313,7 +313,7 @@
 					<h6 class="m-0 font-weight-bold text-primary">학사 일정</h6>
 				</div>
 				<div id="calendarBox" class="card-body">
-					<jsp:include page="/WEB-INF/views/calendar/calTemplate.jsp" />
+					<jsp:include page="/WEB-INF/views/calendar/stdCalTemplate.jsp" />
 				</div>
 			</div>
 

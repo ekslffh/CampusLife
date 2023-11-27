@@ -2,7 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.ddit.lecture.subject.dao.SubjectDao">
 
-	<select id="selectAll" resultType="kr.or.ddit.lecture.subject.vo.SubjectVO">
+	<select id="selectAll"
+		resultType="kr.or.ddit.lecture.subject.vo.SubjectVO">
 		SELECT SUB_NO, SUB_NM, SUB_STATUS, SUB_TYPE, SUB_MAJ_CD
 		FROM SUBJECT
 	</select>
@@ -11,7 +12,8 @@
 		<selectKey order="BEFORE" keyProperty="subNo"
 			resultType="String">
 			SELECT 'SUB' || LPAD(SUBJECT_NO_SEQ.NEXTVAL,3,'0')
-			FROM DUAL
+			FROM
+			DUAL
 		</selectKey>
 		INSERT INTO subject (
 		sub_no,
@@ -23,10 +25,25 @@
 		VALUES (
 		#{subNo,jdbcType=VARCHAR}
 		, #{subNm,jdbcType=VARCHAR}
-		, #{subStatus,jdbcType=VARCHAR}
+		,
+		#{subStatus,jdbcType=VARCHAR}
 		,
 		#{subType,jdbcType=VARCHAR}
-		, #{subMajCd,jdbcType=VARCHAR}
+		,
+		#{subMajCd,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<insert id="insertSubjectEss" parameterType="SubjectEssentialVO">
+		INSERT INTO subject_essential
+		(
+		se_sub_no,
+		se_maj_cd,
+		se_grade
+		) VALUES (
+		#{seSubNo,jdbcType=VARCHAR}
+		, #{seMajCd,jdbcType=VARCHAR}
+		, #{seGrade,jdbcType=NUMERIC}
 		)
 	</insert>
 </mapper>

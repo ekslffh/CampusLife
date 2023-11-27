@@ -44,17 +44,10 @@
      </li>
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo2"
-             aria-expanded="true" aria-controls="collapseTwo2">
+         <a class="nav-link collapsed" href="${pageContext.request.contextPath }/student/official-absence/list.do">
              <i class="fas fa-fw fa-folder"></i>
              <span>공결</span>
          </a>
-         <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="${pageContext.request.contextPath }/student/official-absence/insert.do">공결신청</a>
-                 <a class="collapse-item" href="${pageContext.request.contextPath }/student/official-absence/list.do">공결내역</a>
-             </div>
-         </div>
      </li>
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">

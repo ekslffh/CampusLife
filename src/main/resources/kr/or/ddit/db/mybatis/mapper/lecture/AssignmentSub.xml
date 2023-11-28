@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.lecture.assignment.dao.AssignmentSubDao">
+
+	<select id="selectListByAssignment">
+		SELECT 
+		    ASUB_AS_NO, ASUB_STD_NO, ASUB_FILE
+		    , ASUB_CRT_TM, ASUB_UPD_TM, ASUB_SCORE
+		FROM ASSIGNMENT_SUBMISSION
+		WHERE ASUB_AS_NO = #{asubAsNo}
+	</select>
+	
+	<select id="selectListByStudent">
+		SELECT 
+		    ASUB_AS_NO, ASUB_STD_NO, ASUB_FILE
+		    , ASUB_CRT_TM, ASUB_UPD_TM, ASUB_SCORE
+		FROM ASSIGNMENT_SUBMISSION
+		WHERE ASUB_STD_NO = #{asubStdNo}
+	</select>
+
+	<select id="selectByIds" parameterType="kr.or.ddit.lecture.assignment.vo.AssignmentSubVO">
+		SELECT 
+		    ASUB_AS_NO, ASUB_STD_NO, ASUB_FILE
+		    , ASUB_CRT_TM, ASUB_UPD_TM, ASUB_SCORE
+		FROM ASSIGNMENT_SUBMISSION
+		WHERE ASUB_AS_NO = #{asubAsNo} AND ASUB_STD_NO = #{asubStdNo}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO ASSIGNMENT_SUBMISSION (
+		    ASUB_AS_NO
+		    , ASUB_STD_NO
+		    , ASUB_FILE
+		    , ASUB_CRT_TM
+		    , ASUB_UPD_TM
+		    , ASUB_SCORE
+		) VALUES (
+		    #{asubAsNo,jdbcType=VARCHAR}
+			, #{asubStdNo,jdbcType=VARCHAR}
+			, #{asubFile,jdbcType=VARCHAR}
+			, #{asubCrtTm,jdbcType=DATE}
+			, #{asubUpdTm,jdbcType=DATE}
+			, #{asubScore,jdbcType=NUMERIC}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE ASSIGNMENT_SUBMISSION
+		SET
+		    ASUB_AS_NO= #{asubAsNo ,jdbcType=VARCHAR}
+			, ASUB_STD_NO= #{asubStdNo ,jdbcType=VARCHAR}
+			, ASUB_FILE= #{asubFile ,jdbcType=VARCHAR}
+			, ASUB_CRT_TM= #{asubCrtTm ,jdbcType=DATE}
+			, ASUB_UPD_TM= #{asubUpdTm ,jdbcType=DATE}
+			, ASUB_SCORE= #{asubScore ,jdbcType=NUMERIC}
+		WHERE ASUB_AS_NO = #{asubAsNo} AND ASUB_STD_NO = #{asubStdNo}
+	</update>
+	
+	<delete id="deleteByAsNoAndStdNo">
+		DELETE FROM ASSIGNMENT_SUBMISSION WHERE ASUB_AS_NO = #{asubAsNo} AND ASUB_STD_NO = #{asubStdNo}
+	</delete>
+
+</mapper>

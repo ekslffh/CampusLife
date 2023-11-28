@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.lecture.assignment.dao.AssignmentDao">
+
+	<select id="selectListByLecture" parameterType="java.lang.String" resultType="kr.or.ddit.lecture.assignment.vo.AssignmentVO">
+		SELECT 
+		    AS_NO, AS_REG_TM, AS_START_TM
+		    , AS_END_TM, AS_TITLE, AS_CONTENT
+		    , AS_FILE, AS_LEC_NO
+		FROM ASSIGNMENT
+		WHERE AS_LEC_NO = #{lecNo}
+	</select>
+	
+	<select id="selectById" parameterType="java.lang.String" resultType="kr.or.ddit.lecture.assignment.vo.AssignmentVO">
+		SELECT 
+		    AS_NO, AS_REG_TM, AS_START_TM
+		    , AS_END_TM, AS_TITLE, AS_CONTENT
+		    , AS_FILE, AS_LEC_NO
+		FROM ASSIGNMENT
+		WHERE AS_NO = #{asNo}
+	</select>
+	
+	<insert id="insert" parameterType="kr.or.ddit.lecture.assignment.vo.AssignmentVO">
+		INSERT INTO ASSIGNMENT (
+		    AS_NO
+		    , AS_REG_TM
+		    , AS_START_TM
+		    , AS_END_TM
+		    , AS_TITLE
+		    , AS_CONTENT
+		    , AS_FILE
+		    , AS_LEC_NO
+		) VALUES (
+			#{asNo,jdbcType=VARCHAR}
+			, #{asRegTm,jdbcType=DATE}
+			, #{asStartTm,jdbcType=DATE}
+			, #{asEndTm,jdbcType=DATE}
+		    , #{asTitle,jdbcType=VARCHAR}
+   			, #{asContent,jdbcType=VARCHAR}
+			, #{asFile,jdbcType=VARCHAR}
+			, #{asLecNo,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<update id="update" parameterType="kr.or.ddit.lecture.assignment.vo.AssignmentVO">
+		UPDATE ASSIGNMENT
+		SET
+			AS_START_TM= #{asStartTm ,jdbcType=DATE}
+			, AS_END_TM= #{asEndTm ,jdbcType=DATE}
+			, AS_TITLE= #{asTitle ,jdbcType=VARCHAR}
+			, AS_CONTENT= #{asContent ,jdbcType=VARCHAR}
+			, AS_FILE= #{asFile ,jdbcType=VARCHAR}
+			, AS_LEC_NO= #{asLecNo ,jdbcType=VARCHAR}
+		WHERE AS_NO = #{asNo}
+	</update>
+	
+	<delete id="deleteById">
+		DELETE FROM ASSIGNMENT WHERE AS_NO = #{asNo}
+	</delete>
+
+</mapper>

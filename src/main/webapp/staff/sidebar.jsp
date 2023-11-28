@@ -23,7 +23,7 @@
 				<div class="collapse" id="collapseLayouts1"
 					aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 					<nav class="sb-sidenav-menu-nested nav">
-						<a class="nav-link" href="layout-static.html">학기개설</a>
+						<a class="nav-link" href="${pageContext.request.contextPath}/staff/classRegi/openingClass.do">학기개설</a>
 						<a class="nav-link" href="layout-sidenav-light.html">강의목록</a>
 					</nav>
 				</div>

@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CalendarController {
 	@RequestMapping("calList.do")
 	public String calList() {
-		return "/calendar/calTemplate";
+		return "staff/stfCalendar/calTemplate";
 	}
 }

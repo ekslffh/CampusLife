@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.calendar.dao.CalendarDao">
+
+	<select id="selectAll">
+		SELECT * FROM CALENDAR
+	</select>
+
+	<insert id="insert" parameterType="kr.or.ddit.calendar.vo.CalendarVO">
+		INSERT INTO CALENDAR(
+		cal_id
+		, cal_title
+		, cal_content
+		, cal_start_dt
+		, cal_end_dt
+		) VALUES(
+		CAL_NO_SEQ.NEXTVAL
+		, #{calTitle,jdbcType=VARCHAR}
+		, #{calContent,jdbcType=VARCHAR}
+		, #{calStartDt,jdbcType=DATE}
+		, #{calEndDt,jdbcType=DATE}
+		)
+	</insert>
+
+</mapper>

@@ -307,13 +307,14 @@
 		</div>
 
 		<div class="col-lg-6 mb-4">
+
 			<!-- Illustrations -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-primary">학사 일정</h6>
 				</div>
-				<div id="calendarBox" class="card-body">
-					<jsp:include page="/WEB-INF/views/calendar/calTemplate.jsp" />
+				<div class="card-body">
+					<jsp:include page="/WEB-INF/views/calendar/stdCalTemplate.jsp" />
 				</div>
 			</div>
 
@@ -336,4 +337,5 @@
 
 		</div>
 	</div>
+
 </div>

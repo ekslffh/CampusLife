@@ -7,7 +7,7 @@
 		FROM SUBJECT
 	</select>
 
-	<insert id="insert" parameterType="SubjectVO">
+	<insert id="insert" parameterType="kr.or.ddit.lecture.subject.vo.SubjectVO">
 		<selectKey order="BEFORE" keyProperty="subNo"
 			resultType="String">
 			SELECT 'SUB' || LPAD(SUBJECT_NO_SEQ.NEXTVAL,3,'0')

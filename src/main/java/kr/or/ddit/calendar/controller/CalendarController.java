@@ -4,9 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/calendar")
+@RequestMapping("staff/calendar")
 public class CalendarController {
-	@RequestMapping("calList.do")
+	@RequestMapping("/calList.do")
 	public String calList() {
 		return "staff/stfCalendar/calTemplate";
 	}

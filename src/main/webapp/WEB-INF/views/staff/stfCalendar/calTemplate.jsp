@@ -23,10 +23,12 @@
       displayEventTime: false,
       eventClick: function(info) {
     	var calId = info.event.extendedProps.calId;
+    	console.log(calId);
   	  	var startDate = info.event.start.toLocaleDateString();
   	  	// 밑에서 json타입으로 날짜를 +1일 해서 가져왔기 때문에 상세 조회를 올바르게 하기 위해서 여기서는 -1을 해준다.
   	  	var endDate = info.event.end ? new Date(info.event.end.getTime() - 86400000).toLocaleDateString() : startDate;
-
+		
+  	    $('#eventModalCalId').val(calId);
   	  	$('#eventModalTitle').val(info.event.title);
      	$('#eventModalContent').val(info.event.extendedProps.content);
       	$('#eventModalStartDt').val(startDate);
@@ -51,6 +53,7 @@
       // 가져온 일정으로 캘린더 업뎃
      var events = data.map(function(item) {
     	return {
+    		calId : item.calId,
       		title: item.title,
       		start: new Date(item.start[0], item.start[1] - 1, item.start[2]),
       		end: new Date(item.end[0], item.end[1] - 1, item.end[2]+1),
@@ -60,7 +63,7 @@
 		
   // events에 저장된 캘린더의 정보로 다시 render
      calendar.addEventSource(events);
-      calendar.render();
+     calendar.render();
     });
 
     request.fail(function(jqXHR, textStatus) {
@@ -84,7 +87,8 @@
         contentType: "application/json",
         data: JSON.stringify(calInfo),
         success: function(response) {
-          console.log("이벤트가 성공적으로 추가되었습니다:", response);
+          console.log("일정이 추가되었습니다:", response);
+          location.reload();
         },
         error: function(jqXHR, textStatus, errorThrown) {
           console.error("발생", textStatus, errorThrown);
@@ -97,12 +101,14 @@
     
     $('#updateCal').on("click", function(){
     	 var updateCalInfo = {
-    		calId: $('#eventModal').data('calId'),
+    		calId: $('#eventModalCalId').val(),
     		calTitle: $("#eventModalTitle").val(),
     		calContent: $("#eventModalContent").val(),
     		calStartDt: $("#eventModalStartDt").val(),
     		calEndDt: $("#eventModalEndDt").val()
     	};
+    	 
+    	 console.log(updateCalInfo);
     	 
     	 // ProductionController로 데이터 전송
          $.ajax({
@@ -111,11 +117,9 @@
            contentType: "application/json",
            data: JSON.stringify(updateCalInfo),
            success: function(response) {
-             console.log("이벤트가 성공적으로 추가되었습니다:", response);
+             console.log("일정이 수정되었습니다:", response);
+             location.reload();
            },
-           error: function(jqXHR, textStatus, errorThrown) {
-             console.error("발생", textStatus, errorThrown);
-           }
          });
     	
     	// 모달 닫기
@@ -123,20 +127,18 @@
     });
     
     $('#deleteCal').on("click", function(){
-    	   var calId = $('#eventModal').data('calId');
-    	   
+    	   var calId = $('#eventModalCalId').val();
+    	   console.log(calId)
     	   // ProductionController로 데이터 전송
     	   $.ajax({
     	      url: "${pageContext.request.contextPath}/cal/production/deleteCal.do",
     	      method: "POST",
     	      contentType: "application/json",
-    	      data: JSON.stringify({ calId: calId }),
+    	      data: calId,
     	      success: function(response) {
-    	         console.log("이벤트가 성공적으로 삭제되었습니다:", response);
+    	         console.log("일정이 삭제되었습니다:", response);
+    	         location.reload();
     	      },
-    	      error: function(jqXHR, textStatus, errorThrown) {
-    	         console.error("발생", textStatus, errorThrown);
-    	      }
     	   });
 
     	   // 모달 닫기
@@ -191,6 +193,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
+                	<input type="hidden" id="eventModalCalId"/>
 					<label for="taskId" class="col-form-label">제목</label> <input
 						type="text" class="form-control" id="eventModalTitle" name="eventModalTitle">
 					<label for="calContent" class="col-form-label">내용</label>

@@ -35,7 +35,8 @@ public class ProductionController {
 		JSONArray jsonArr = new JSONArray();
 		HashMap<String, Object> hash = new HashMap<String, Object>();		
 		
-		for(int i=0; i < list.size(); i++) {			
+		for(int i=0; i < list.size(); i++) {
+			hash.put("calId", list.get(i).getCalId()); // 아이디
 			hash.put("title", list.get(i).getCalTitle()); // 제목
 			hash.put("content", list.get(i).getCalContent()); // 내용
 			hash.put("start", list.get(i).getCalStartDt()); // 시작일자
@@ -60,17 +61,57 @@ public class ProductionController {
 	}
 	
 	@RequestMapping("updateCal.do")
-	public void updateCal(
+	@ResponseBody
+	public List<Map<String, Object>> updateCal(
 			@RequestBody CalendarVO updateCalInfo
 			) {
 		productionPlanService.updateCal(updateCalInfo);
+		
+		List<CalendarVO> list = productionPlanService.getProductionAllPlanList();
+		
+		JSONObject jsonObj = new JSONObject();
+		JSONArray jsonArr = new JSONArray();
+		HashMap<String, Object> hash = new HashMap<String, Object>();		
+		
+		for(int i=0; i < list.size(); i++) {			
+			hash.put("title", list.get(i).getCalTitle()); // 제목
+			hash.put("content", list.get(i).getCalContent()); // 내용
+			hash.put("start", list.get(i).getCalStartDt()); // 시작일자
+			hash.put("end", list.get(i).getCalEndDt()); // 종료일자
+			
+			jsonObj = new JSONObject(hash); // 중괄호 {key:value , key:value, key:value}
+			jsonArr.add(jsonObj); // 대괄호 안에 넣어주기[{key:value , key:value, key:value},{key:value , key:value, key:value}]
+		}
+		
+		log.info("jsonArrCheck: {}", jsonArr);
+		
+		return jsonArr;
 	}
 	
 	@RequestMapping("deleteCal.do")
-	public void deleteCal(
+	@ResponseBody
+	public List<Map<String, Object>> deleteCal(
 			@RequestBody String calId
 			) {
-		
 		productionPlanService.deleteCal(calId);
+		List<CalendarVO> list = productionPlanService.getProductionAllPlanList();
+		
+		JSONObject jsonObj = new JSONObject();
+		JSONArray jsonArr = new JSONArray();
+		HashMap<String, Object> hash = new HashMap<String, Object>();		
+		
+		for(int i=0; i < list.size(); i++) {			
+			hash.put("title", list.get(i).getCalTitle()); // 제목
+			hash.put("content", list.get(i).getCalContent()); // 내용
+			hash.put("start", list.get(i).getCalStartDt()); // 시작일자
+			hash.put("end", list.get(i).getCalEndDt()); // 종료일자
+			
+			jsonObj = new JSONObject(hash); // 중괄호 {key:value , key:value, key:value}
+			jsonArr.add(jsonObj); // 대괄호 안에 넣어주기[{key:value , key:value, key:value},{key:value , key:value, key:value}]
+		}
+		
+		log.info("jsonArrCheck: {}", jsonArr);
+		
+		return jsonArr;
 	}
 }

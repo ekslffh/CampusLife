@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.ddit.calendar.dao.CalendarDao">
-
 	<select id="selectAll">
 		SELECT * FROM CALENDAR
 	</select>
@@ -22,4 +21,17 @@
 		)
 	</insert>
 
+	<update id="update" parameterType="kr.or.ddit.calendar.vo.CalendarVO">
+		UPDATE calendar
+		SET cal_title = #{calTitle,jdbcType=VARCHAR}
+		, cal_content = #{calContent,jdbcType=VARCHAR}
+		, cal_start_dt = #{calStartDt,jdbcType=DATE}
+		, cal_end_dt = #{calEndDt,jdbcType=DATE}
+		WHERE cal_id = #{calId,jdbcType=VARCHAR}
+	</update>
+	
+	<delete id="deleteById">
+		DELETE FROM calendar
+		WHERE cal_id = #{calId, jdbcType=VARCHAR}
+	</delete>
 </mapper>

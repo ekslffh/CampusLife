@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import kr.or.ddit.exception.PKNotFoundException;
 import kr.or.ddit.lecture.subject.dao.SubjectDao;
+import kr.or.ddit.lecture.subject.vo.SubjectEssentialVO;
 import kr.or.ddit.lecture.subject.vo.SubjectVO;
 
 
@@ -53,6 +54,14 @@ public class SubjectServiceImpl implements SubjectService {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public boolean insertSubjectEss(SubjectEssentialVO subEvo) {
+		int cnt = subDao.insertSubjectEss(subEvo);
+		return cnt > 0;
+	}
+	
+	
 	
 	
 

@@ -19,7 +19,7 @@
 <!-- 				<i class="fas fa-search"></i> -->
 <!-- 			</button> -->
 <!-- 		</div> -->
-		<a href="${pageContext.request.contextPath}/calendar/calList.do"> 
+		<a href="${pageContext.request.contextPath}/staff/calendar/calList.do"> 
 			<i class="far fa-calendar-alt"></i>
 		</a>
 	</form>

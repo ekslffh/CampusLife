@@ -34,7 +34,7 @@
 		)
 	</insert>
 
-	<insert id="insertSubjectEss" parameterType="SubjectEssentialVO">
+	<insert id="insertSubjectEss" parameterType="kr.or.ddit.lecture.subject.vo.SubjectEssentialVO">
 		INSERT INTO subject_essential
 		(
 		se_sub_no,

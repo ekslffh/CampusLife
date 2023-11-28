@@ -6,10 +6,7 @@ import java.util.Map;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.mybatis.logging.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -54,11 +51,26 @@ public class ProductionController {
 	}
 	
 	@RequestMapping("addCal.do")
-	public void insertCal(
+	public String insertCal(
 			@RequestBody CalendarVO calInfo
 			) {
-		String logicalViewName = null;
-		boolean result = true;
 		productionPlanService.insertCal(calInfo);
+		
+		return "staff/stfCalendar/calTemplate";
+	}
+	
+	@RequestMapping("updateCal.do")
+	public void updateCal(
+			@RequestBody CalendarVO updateCalInfo
+			) {
+		productionPlanService.updateCal(updateCalInfo);
+	}
+	
+	@RequestMapping("deleteCal.do")
+	public void deleteCal(
+			@RequestBody String calId
+			) {
+		
+		productionPlanService.deleteCal(calId);
 	}
 }

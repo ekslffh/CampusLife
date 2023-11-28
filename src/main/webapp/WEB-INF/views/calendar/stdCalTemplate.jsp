@@ -12,7 +12,17 @@
         right: ''
       },
       editable: true,
-      displayEventTime: false
+      displayEventTime: false,
+      eventClick: function(info) {
+    	  	var startDate = info.event.start.toLocaleDateString();
+    	  	// 밑에서 json타입으로 날짜를 +1일 해서 가져왔기 때문에 상세 조회를 올바르게 하기 위해서 여기서는 -1을 해준다.
+    	  	var endDate = info.event.end ? new Date(info.event.end.getTime() - 86400000).toLocaleDateString() : startDate;
+
+    	    $('#eventModalTitle').text(info.event.title);
+    	    $('#eventModalContent').text(info.event.extendedProps.content);
+    	    $('#eventModalDateTime').html(startDate + ' ~ ' + endDate);
+    	    $('#eventModal').modal('show');
+        }
     };
 
     var calendarEl = document.getElementById('calendar');
@@ -43,10 +53,25 @@
       calendar.addEventSource(events);
       calendarWithData.render();
     });
-
-    request.fail(function(jqXHR, textStatus) {
-      alert("요청 실패: " + textStatus);
-    });
   });
 </script>
-    <div id='calendar'></div>
+<div class="modal fade" tabindex="-1" role="dialog" id="eventModal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">일정 상세 정보</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>제   목:</strong> <span id="eventModalTitle"></span></p>
+        <p><strong>일   시:</strong> <span id="eventModalDateTime"></span></p>
+        <p><strong>내   용:</strong> <span id="eventModalContent"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id='calendar'></div>

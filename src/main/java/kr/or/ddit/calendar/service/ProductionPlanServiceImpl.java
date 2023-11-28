@@ -16,14 +16,22 @@ public class ProductionPlanServiceImpl implements ProductionPlanService{
 	
 	@Override
 	public List<CalendarVO> getProductionAllPlanList() {
-		
 		return calDAO.selectAll();
 	}
 
 	@Override
-	public String insertCal(CalendarVO calInfo) {
+	public void insertCal(CalendarVO calInfo) {
 		calDAO.insert(calInfo);
-		return null;
 	}
 
+	@Override
+	public void updateCal(CalendarVO updateCalInfo) {
+		
+		calDAO.update(updateCalInfo);
+	}
+
+	@Override
+	public void deleteCal(String calId) {
+		calDAO.deleteById(calId);
+	}
 }

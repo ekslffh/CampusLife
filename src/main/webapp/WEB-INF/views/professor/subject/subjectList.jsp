@@ -9,7 +9,7 @@
 	<br>
 	<h1 class="h3 mb-2 text-gray-800">과목 개설</h1>
 	<p class="mb-4" style="color: red;">
-		<i class="bi bi-exclamation-circle"></i> 과목 생성은 생성 후 삭제할 수 없습니다. 필수 과목
+		<i class="bi bi-exclamation-circle"></i> 과목은 생성 후 삭제할 수 없습니다. 필수 과목
 		여부를 꼭 확인하고 생성해주십시오.
 	</p>
 
@@ -61,9 +61,10 @@
 			</tr>
 			<tr>
 				<th>필수 여부</th>
-				<td><form:radiobutton path="subRequired" value="1" /> 필수 </td>
+				<td><form:radiobutton path="subRequired" value="0" id="optionalRadio"/> 선택 과목
+				<form:radiobutton path="subRequired" value="1" id="requiredRadio"/> 필수 과목</td>
 			</tr>
-			<tr>
+			<tr id="gradeRow" style="display:none;">
 				<th>대상 학년</th>
 				<td><form:select path="seGrade">
 						<form:option value="0">학년을 선택해주세요.</form:option>
@@ -89,7 +90,6 @@
 			<table id="datatablesSimple">
 				<thead>
 					<tr>
-						<th>과목번호</th>
 						<th>과목이름</th>
 						<th>상태</th>
 						<th>구분</th>
@@ -105,7 +105,6 @@
 					<c:if test="${not empty subList }">
 						<c:forEach items="${subList }" var="sub">
 							<tr>
-								<td>${sub.subNo}</td>
 								<td>${sub.subNm}</td>
 								<td>${sub.subStatus}</td>
 								<td>${sub.subType}</td>
@@ -193,4 +192,16 @@
 		option.value = value;
 		select.add(option);
 	}
+	
+	 // 필수 여부 라디오 버튼 변경 이벤트 처리
+    document.getElementById('requiredRadio').addEventListener('click', function() {
+        var gradeRow = document.getElementById('gradeRow');
+        gradeRow.style.display = (this.checked) ? 'table-row' : 'none';
+    });
+	 
+ // 선택 과목 라디오 버튼 변경 이벤트 처리
+    document.getElementById('optionalRadio').addEventListener('click', function() {
+        var gradeRow = document.getElementById('gradeRow');
+        gradeRow.style.display = 'none';
+    });
 </script>

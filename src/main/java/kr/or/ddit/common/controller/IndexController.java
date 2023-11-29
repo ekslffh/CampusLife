@@ -16,7 +16,7 @@ public class IndexController {
 		String accType = wrapper.getAccType();
 		if (accType.equals("STD")) {
 			return "redirect:/student";
-		} else if (accType.equals("PROF")) {
+		} else if (accType.equals("PRF")) {
 			return "redirect:/professor";
 		} else {
 			return "redirect:/staff";

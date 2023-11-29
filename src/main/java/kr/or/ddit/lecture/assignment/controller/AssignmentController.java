@@ -38,8 +38,9 @@ public class AssignmentController {
 		String viewName = null;
 		// 특정강의에 대한 전체 과제리스트 가져와서 모델에 담기
 		List<AssignmentVO> assignmentList = assignmentService.findListByLecture(lecNo);
+		model.addAttribute("lecNo", lecNo);
 		model.addAttribute("assignmentList", assignmentList);
-		viewName = "professor/lecture/assignmentList";
+		viewName = "professor/lecture/ajax/assignmentList";
 		return viewName;
 	}
 	
@@ -72,7 +73,7 @@ public class AssignmentController {
 			obj.setAsubStdNo(student.getStdNo());
 			AssignmentSubVO assignmentSub = assignmentSubService.findByIds(obj);
 			model.addAttribute("assignmentSub", assignmentSub);
-			viewName = "student/lecture/assignmentView";
+			viewName = "student/lecture/ajax/assignmentView";
 		}
 		// 교직원이거나 잘못된 사용자의 타입인경우로 에러
 		else {}

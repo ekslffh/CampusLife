@@ -19,20 +19,11 @@
 
 <main class="container py-5">
   <h2>강의리스트</h2>
-  <!-- <p class="lead">Integrate <a href="https://masonry.desandro.com/">Masonry</a> with the Bootstrap grid system and cards component.</p>
-
-  <p>Masonry is not included in Bootstrap. Add it by including the JavaScript plugin manually, or using a CDN like so:</p>
-
-  <pre><code>
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js&quot; integrity=&quot;sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D&quot; crossorigin=&quot;anonymous&quot; async&gt;&lt;/script&gt;
-  </code></pre>
-
-  <p>By adding <code>data-masonry='{"percentPosition": true }'</code> to the <code>.row</code> wrapper, we can combine the powers of Bootstrap's responsive grid and Masonry's positioning.</p> -->
 
   <hr class="my-5">
 
   <div class="row" data-masonry='{"percentPosition": true }'>
-  	<a href="${pageContext.request.contextPath }/lecture/view.do" class="col-sm-6 col-lg-4 mb-4">
+  	<a href="${pageContext.request.contextPath }/lecture/view.do?lecNo=1234" class="col-sm-6 col-lg-4 mb-4">
 	    <div>
 	      <div class="card">
 	        <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
@@ -43,7 +34,7 @@
 	      </div>
 	    </div>
   	</a>
-  	<a href="${pageContext.request.contextPath }/lecture/view.do" class="col-sm-6 col-lg-4 mb-4">
+  	<a href="${pageContext.request.contextPath }/lecture/view.do?lecNo=1234" class="col-sm-6 col-lg-4 mb-4">
 	    <div>
 	      <div class="card">
 	        <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
@@ -54,7 +45,7 @@
 	      </div>
 	    </div>
   	</a>
-  	<a href="${pageContext.request.contextPath }/lecture/view.do" class="col-sm-6 col-lg-4 mb-4">
+  	<a href="${pageContext.request.contextPath }/lecture/view.do?lecNo=1234" class="col-sm-6 col-lg-4 mb-4">
 	    <div>
 	      <div class="card">
 	        <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
@@ -65,7 +56,7 @@
 	      </div>
 	    </div>
   	</a>
-  	<a href="${pageContext.request.contextPath }/lecture/view.do" class="col-sm-6 col-lg-4 mb-4">
+  	<a href="${pageContext.request.contextPath }/lecture/view.do?lecNo=1234" class="col-sm-6 col-lg-4 mb-4">
 	    <div>
 	      <div class="card">
 	        <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
@@ -76,7 +67,7 @@
 	      </div>
 	    </div>
   	</a>
-  	<a href="${pageContext.request.contextPath }/lecture/view.do" class="col-sm-6 col-lg-4 mb-4">
+  	<a href="${pageContext.request.contextPath }/lecture/view.do?lecNo=1234" class="col-sm-6 col-lg-4 mb-4">
 	    <div>
 	      <div class="card">
 	        <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
@@ -87,7 +78,7 @@
 	      </div>
 	    </div>
   	</a>
-  	<a href="${pageContext.request.contextPath }/lecture/view.do" class="col-sm-6 col-lg-4 mb-4">
+  	<a href="${pageContext.request.contextPath }/lecture/view.do?lecNo=1234" class="col-sm-6 col-lg-4 mb-4">
 	    <div>
 	      <div class="card">
 	        <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>

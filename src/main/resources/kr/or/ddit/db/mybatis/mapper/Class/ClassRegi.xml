@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.classRegi.dao.ClassRegiDao">
+
+	<insert id="insert" parameterType="kr.or.ddit.classRegi.vo.ClassRegiVO">
+		INSERT INTO class_registeration (
+		cr_no,
+		cr_year,
+		cr_sem,
+		cr_pre_start_tm,
+		cr_pre_end_tm,
+		cr_start_tm,
+		cr_end_tm,
+		cr_end_sem_sr
+		) VALUES (
+		#{crNo,jdbcType=NUMERIC}
+		, #{crYear,jdbcType=NUMERIC}
+		, #{crSem,jdbcType=NUMERIC}
+		, #{crPreStartTm,jdbcType=TIMESTAMP}
+		, #{crPreEndTm,jdbcType=TIMESTAMP}
+		, #{crStartTm,jdbcType=TIMESTAMP}
+		, #{crEndTm,jdbcType=TIMESTAMP}
+		, 'N'
+		)
+	</insert>
+</mapper>

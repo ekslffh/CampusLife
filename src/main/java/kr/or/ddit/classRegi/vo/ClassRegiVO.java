@@ -1,8 +1,10 @@
 package kr.or.ddit.classRegi.vo;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.validation.constraints.NotBlank;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,14 +18,22 @@ public class ClassRegiVO {
 	private Integer crYear;
 	@NotBlank
 	private Integer crSem;
-	@NotBlank
-	private LocalDate crPreStartTm;
-	@NotBlank
-	private LocalDate crPreEndTm;
-	@NotBlank
-	private LocalDate crStartTm;
-	@NotBlank
-	private LocalDate crEndTm;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    @NotBlank
+    private LocalDateTime crPreStartTm;
+    
+	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    @NotBlank
+    private LocalDateTime crPreEndTm;
+    
+	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    @NotBlank
+    private LocalDateTime crStartTm;
+    
+	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    @NotBlank
+    private LocalDateTime crEndTm;
 	@NotBlank
 	private String crEndSemSr;
 }

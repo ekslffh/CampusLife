@@ -18,9 +18,9 @@
 </style>
 
 <main class="container py-5">
-  <h2>교수 강의리스트</h2>
+  <h2>학생 강의리스트</h2>
 
-  <hr class="my-5">
+  <hr>
 
   <div class="row" data-masonry='{"percentPosition": true }'>
   	<a href="${pageContext.request.contextPath }/lecture/view.do?lecNo=1234" class="col-sm-6 col-lg-4 mb-4">

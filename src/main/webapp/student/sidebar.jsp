@@ -15,7 +15,7 @@
 
      <!-- Nav Item - Dashboard -->
      <li class="nav-item active">
-         <a class="nav-link" href="index.html">
+         <a class="nav-link" href="${pageContext.request.contextPath }/student">
              <i class="fas fa-fw fa-tachometer-alt"></i>
              <span>대쉬보드</span></a>
      </li>
@@ -30,17 +30,16 @@
 
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo1"
-             aria-expanded="true" aria-controls="collapseTwo1">
+         <a class="nav-link" href="${pageContext.request.contextPath }/lecture/list.do">
              <i class="fas fa-fw fa-folder"></i>
              <span>강의</span>
          </a>
-         <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <!--  <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <a class="collapse-item" href="buttons.html">졸프2</a>
                  <a class="collapse-item" href="buttons.html">취업전략</a>
              </div>
-         </div>
+         </div> -->
      </li>
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">

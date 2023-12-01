@@ -3,7 +3,7 @@
 <!-- <script src="../assets/js/color-modes.js"></script> -->
    
 <style>
-  #content {
+  #content2 {
     flex: 1; /* 1로 설정하여 나머지 공간을 100% 차지하도록 함 */
     padding: 20px; /* 원하는 패딩 값 적용 (선택사항) */
     /* 다른 스타일 속성들을 필요에 따라 추가할 수 있음 */
@@ -11,9 +11,9 @@
 </style>
  
 <main class="d-flex flex-nowrap">
-  <%@ include file="/WEB-INF/views/professor/lecture/lectureSidebar.jsp"%>
+  <%@ include file="/WEB-INF/views/student/lecture/lectureSidebar.jsp"%>
 
-  <div id="content">
+  <div id="content2">
   </div>
 </main>
 
@@ -36,7 +36,7 @@
 				method : 'get',
 				dataType : 'html',
 				success : function(data) {
-					$(content).html(data);
+					$(content2).html(data);
 				},
 				error : function(jqXHR, status, error) {
 					console.log(jqXHR);

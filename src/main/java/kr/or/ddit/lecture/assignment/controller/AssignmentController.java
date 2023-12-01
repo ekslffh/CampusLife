@@ -11,6 +11,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.or.ddit.lecture.assignment.service.AssignmentService;
 import kr.or.ddit.lecture.assignment.service.AssignmentSubService;
@@ -32,15 +33,30 @@ public class AssignmentController {
 	
 	@GetMapping("/list.do")
 	public String getList(
-		String lecNo
-		, Model model
+			String lecNo
+			, Model model
+			, Authentication authentication
+			, RedirectAttributes redirectAttributes
 	) {
-		String viewName = null;
 		// 특정강의에 대한 전체 과제리스트 가져와서 모델에 담기
 		List<AssignmentVO> assignmentList = assignmentService.findListByLecture(lecNo);
-		model.addAttribute("lecNo", lecNo);
+		
 		model.addAttribute("assignmentList", assignmentList);
-		viewName = "professor/lecture/ajax/assignmentList";
+		model.addAttribute("lecNo", lecNo);
+		
+		AccountWrapper wrapper = (AccountWrapper) authentication.getPrincipal();
+		String accType = wrapper.getAccType();
+		
+		String viewName = null;
+		
+		if (accType.equals("STD")) {
+			viewName = "student/lecture/ajax/assignmentList";
+		} else if (accType.equals("PRF")) {
+			viewName = "professor/lecture/ajax/assignmentList";
+		} else {
+			redirectAttributes.addFlashAttribute("errMsg", "교직원은 입장할 수 없습니다.");
+			viewName = "redirect:/staff";
+		}
 		return viewName;
 	}
 	
@@ -49,6 +65,7 @@ public class AssignmentController {
 		String asNo
 		, Authentication authentication
 		, Model model
+		, RedirectAttributes redirectAttributes
 	) {
 		String viewName = null;
 		// 과제번호를 기준으로 과제정보 가져오기
@@ -57,11 +74,12 @@ public class AssignmentController {
 		// 특정 과제로 들어갔을 때 두가지로 구분한다.
 		AccountWrapper wrapper = (AccountWrapper) authentication.getPrincipal();
 		String accType = wrapper.getAccType();
+		
 		// 교수일 경우, 과제상세정보와 아래의 학생들이 제출한 자료들을 확인할 수 있다.(과제정보 수정, 삭제가능)
 		if (accType.equals("PRF")) {
 			List<AssignmentSubVO> assignmentSubList = assignmentSubService.findListByAssignment(asNo);
 			model.addAttribute("assignmentSubList", assignmentSubList);
-			viewName = "professor/lecture/assignmentView";
+			viewName = "professor/lecture/ajax/assignmentView";
 		}
 		// 학생일 경우, 과제상세정보와 본인이 제출한 내역만 우측상단에서 확인이 가능하다.(제출물 수정,삭제가능)
 		else if (accType.equals("STD")) {

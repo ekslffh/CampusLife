@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import kr.or.ddit.exception.PKNotFoundException;
 import kr.or.ddit.lecture.assignment.service.AssignmentService;
 import kr.or.ddit.lecture.assignment.service.AssignmentSubService;
 import kr.or.ddit.lecture.assignment.vo.AssignmentSubVO;
@@ -62,7 +63,7 @@ public class AssignmentController {
 		String viewName = null;
 		
 		if (accType.equals("STD")) {
-			viewName = "student/lecture/ajax/assignmentList";
+			viewName = "student/lecture/assignment/ajax/assignmentList";
 		} else if (accType.equals("PRF")) {
 			viewName = "professor/lecture/assignment/ajax/assignmentList";
 		} else {
@@ -101,9 +102,13 @@ public class AssignmentController {
 			AssignmentSubVO obj = new AssignmentSubVO();
 			obj.setAsubAsNo(asNo);
 			obj.setAsubStdNo(student.getStdNo());
-			AssignmentSubVO assignmentSub = assignmentSubService.findByIds(obj);
-			model.addAttribute("assignmentSub", assignmentSub);
-			viewName = "student/lecture/ajax/assignmentView";
+			try {
+				AssignmentSubVO assignmentSub = assignmentSubService.findByIds(obj);
+				model.addAttribute("assignmentSub", assignmentSub);
+			} catch (PKNotFoundException e) {
+				
+			}
+			viewName = "student/lecture/assignment/ajax/assignmentView";
 		}
 		// 교직원이거나 잘못된 사용자의 타입인경우로 에러
 		else {}

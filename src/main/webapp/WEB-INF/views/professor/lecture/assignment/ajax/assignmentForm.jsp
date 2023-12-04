@@ -16,7 +16,7 @@
 </c:choose>
 <br />
 
-<form:form id="asForm" method="post" modelAttribute="assignment">
+<form:form class="ajaxForm" method="post" modelAttribute="assignment">
 	<form:hidden path="asLecNo" value="${lecNo }" />
 	<c:if test="${not empty assignment.asNo }">
 		<form:hidden path="asNo" value="${assignment.asNo }" />

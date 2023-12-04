@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"atchFileId", "fileSn"})
+@EqualsAndHashCode(of = {"afId", "fileSn"})
 public class AtchFileDetailVO {
 	private MultipartFile uploadFile;
 
@@ -30,7 +30,7 @@ public class AtchFileDetailVO {
 	}
 
 	@NotBlank
-	private String atchFileId;
+	private String afId;
 	@NotBlank
 	private int fiSn;
 	@NotBlank

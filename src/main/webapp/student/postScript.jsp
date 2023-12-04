@@ -11,11 +11,11 @@
 <script src="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/vendor/chart.js/Chart.min.js"></script>
+<%-- <script src="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/vendor/chart.js/Chart.min.js"></script> --%>
 
 <!-- Page level custom scripts -->
-<script src="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-area-demo.js"></script>
-<script src="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-pie-demo.js"></script>
+<%-- <script src="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-area-demo.js"></script> --%>
+<%-- <script src="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-pie-demo.js"></script> --%>
 
 <!-- Page level plugins -->
 <script src="${pageContext.request.contextPath }/resources/startbootstrap-sb-admin-2-gh-pages/vendor/datatables/jquery.dataTables.min.js"></script>

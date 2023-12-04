@@ -19,7 +19,11 @@
 
 		<!-- 부트스트랩 아이콘 사용 -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">        
-		
+		<style type="text/css">
+			.error {
+				color: red;
+			}
+		</style>
     </head>
     <body class="sb-nav-fixed">
     

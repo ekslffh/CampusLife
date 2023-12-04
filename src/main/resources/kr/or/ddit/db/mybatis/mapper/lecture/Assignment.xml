@@ -54,7 +54,7 @@
 		WHERE AS_NO = #{asNo}
 	</update>
 	
-	<delete id="deleteById">
+	<delete id="deleteById" parameterType="kr.or.ddit.lecture.assignment.vo.AssignmentVO">
 		DELETE FROM ASSIGNMENT WHERE AS_NO = #{asNo}
 	</delete>
 

@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import kr.or.ddit.validate.DeleteGroup;
+import kr.or.ddit.validate.InsertGroup;
 import kr.or.ddit.validate.UpdateGroup;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -27,6 +28,6 @@ public class AssignmentVO {
 	private String asTitle;						// 제목
 	private String asContent;					// 내용
 	private String asFile;						// 첨부파일
-	@NotBlank
+	@NotBlank(groups = {InsertGroup.class, UpdateGroup.class, DeleteGroup.class})
 	private String asLecNo;						// 강의번호
 }

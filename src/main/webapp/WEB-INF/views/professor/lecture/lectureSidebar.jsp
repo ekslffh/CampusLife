@@ -80,7 +80,7 @@
 
  <div class="flex-shrink-0 p-3" style="width: 200px;">
     <a href="#" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
-      <span class="fs-5 fw-semibold">강의</span>
+      <span class="fs-5 fw-semibold">강의 (${lecNo })</span>
     </a>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="mb-1">

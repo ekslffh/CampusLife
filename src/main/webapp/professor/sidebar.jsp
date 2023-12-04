@@ -25,7 +25,7 @@
   						<a class="nav-link" href="${pageContext.request.contextPath }/lecture/list.do">강의</a>
 						<a class="nav-link" href="layout-sidenav-light.html">공결</a>
 						<a class="nav-link" href="${pageContext.request.contextPath }/professor/subject/subjectList.do">과목개설</a>
-						<a class="nav-link" href="layout-sidenav-light.html">강의개설</a>
+						<a class="nav-link" href="${pageContext.request.contextPath }/professor/insertLecture/insert.do">강의개설</a>
 					</nav>
 				</div>
 				<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"

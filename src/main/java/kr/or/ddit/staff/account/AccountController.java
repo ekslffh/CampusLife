@@ -21,7 +21,7 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/staff/account/")
-public class AccountCreateController {
+public class AccountController {
 
 	private final StaffService stfService;
 	
@@ -34,12 +34,21 @@ public class AccountCreateController {
 		return "staff/account/accForm";
 	}
 	
+	
+	public String getaccList() {
+		return "staff/account/accList";
+	}
+	
 	// 학생 계정 리스트 출력하기
 	@RequestMapping("accList.do")
 	public String stdList(Model model) {
 		List<StudentVO> stdList = stdService.findAll();
+		List<StaffVO> stfList = stfService.findAll();
+		List<ProfessorVO> profList = profService.findAll();
 		
 		model.addAttribute("stdList", stdList);
+		model.addAttribute("stfList", stfList);
+		model.addAttribute("profList", profList);
 		
 		return "staff/account/accList";
 	}

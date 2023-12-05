@@ -2,12 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.ddit.professor.dao.ProfessorDAO">
 
-	<select id="selectAll">
+	<select id="selectAll" resultType="kr.or.ddit.professor.vo.ProfessorVO">
 		SELECT 
-		    PROF_NO, PROF_NM, PROF_GENDER
-		    , PROF_PROFILE, PROF_COUNTRY, PROF_ADDR
-		    , PROF_TEL, PROF_EMAIL, PROF_JOIN_DT
-		    , PROF_STATUS, PROF_MAJ_CD, PROF_PW
+		    PROF_NO
+			, PROF_NM
+			, PROF_GENDER
+			, PROF_PROFILE
+			, PROF_COUNTRY
+			, PROF_ADDR
+			, PROF_TEL
+			, PROF_EMAIL
+			, PROF_JOIN_DT
+			, PROF_STATUS
+			, PROF_MAJ_CD
+			, PROF_PW
+			, PROF_DETAIL_ADDR
 		FROM PROFESSOR
 	</select>
 	

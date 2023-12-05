@@ -4,10 +4,20 @@
 
 	<select id="selectAll" resultType="kr.or.ddit.staff.vo.StaffVO">
 		SELECT
-		    STF_NO, STF_NM, STF_GENDER
-		    , STF_PROFILE, STF_COUNTRY, STF_ADDR
-		    , STF_TEL, STF_EMAIL, STF_JOIN_DT
-		    , STF_STATUS, STF_DEPT_NO, STF_PW
+		    STF_NO
+			, STF_NM
+			, STF_GENDER
+			, STF_PROFILE
+			, STF_COUNTRY
+			, STF_ADDR
+			, STF_TEL
+			, STF_EMAIL
+			, STF_JOIN_DT
+			, STF_STATUS
+			, STF_DEPT_NO
+			, STF_PW
+			, STF_DETAIL_ADDR
+			, STF_POST_NO
 		FROM STAFF
 	</select>
 	

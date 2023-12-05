@@ -1,5 +1,7 @@
 package kr.or.ddit.student.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.or.ddit.common.dao.DaoIfs;
@@ -10,4 +12,6 @@ import kr.or.ddit.student.vo.StudentVO;
 public interface StudentDAO extends DaoIfs<StudentVO> {
 
 	public int insertStd(StudentVO std);
+	
+	List<StudentVO> selectStdList();
 }

@@ -47,7 +47,6 @@ th {
 								<a href="${pageContext.request.contextPath}/staff/account/accInsert.do">교직원</a></li>
 								<li class="breadcrumb-item active">
 								<a href="${pageContext.request.contextPath}/staff/account/profAccInsert.do">교수</a></li>
-								
 							</ol>
 						</nav>
 					</div>

@@ -4,11 +4,23 @@
 
 	<select id="selectAll" resultType="kr.or.ddit.student.vo.StudentVO">
 		SELECT 
-		    STD_NO, STD_NM, STD_TEL
-		    , STD_ADDR, STD_GENDER, STD_BIR
-		    , STD_EMAIL, STD_COUNTRY, STD_STATUS
-		    , STD_PROFILE, STD_FIN_CREDIT, STD_FIN_SEM
-		    , STD_MAJ_CD, STD_PROF_NO, STD_PW
+		    std_no,
+		    std_nm,
+		    std_tel,
+		    std_addr,
+		    std_gender,
+		    std_bir,
+		    std_email,
+		    std_country,
+		    std_status,
+		    std_profile,
+		    std_fin_credit,
+		    std_fin_sem,
+		    std_maj_cd,
+		    std_prof_no,
+		    std_pw,
+		    std_detail_addr,
+		    std_post_no
 		FROM STUDENT 
 	</select>
 
@@ -66,5 +78,7 @@
 			, #{stdPostNo,jdbcType=VARCHAR}
 		)
 	</insert>
+	
+	
 
 </mapper>

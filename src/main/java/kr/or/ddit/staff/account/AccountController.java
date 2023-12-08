@@ -34,7 +34,7 @@ public class AccountController {
 		return "staff/account/accForm";
 	}
 	
-	
+	 
 	public String getaccList() {
 		return "staff/account/accList";
 	}

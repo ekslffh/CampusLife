@@ -11,7 +11,7 @@
 			, STF_COUNTRY
 			, STF_ADDR
 			, STF_TEL
-			, STF_EMAIL
+			, STF_EMAIL 
 			, STF_JOIN_DT
 			, STF_STATUS
 			, STF_DEPT_NO

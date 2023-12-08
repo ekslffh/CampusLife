@@ -9,7 +9,7 @@
 <!-- 게시판 헤더 영역 시작 -->
 <div class="card-header"
 	style="padding-bottom: 5px; margin-bottom: 15px;">
-	<h5 class="card-tit">계정 관리</h5>
+	<h5 class="card-tit">계정 관리 </h5>
 	<nav>
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="index.html"><i
